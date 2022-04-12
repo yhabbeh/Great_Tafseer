@@ -1,7 +1,5 @@
  import 'package:flutter/material.dart';
-
-import 'home_Page.dart';
-
+import 'package:mian/splash_page.dart';
 
 void main()=> runApp(MainApp());
 class MainApp extends StatefulWidget {
@@ -17,7 +15,7 @@ class _MainAppState extends State<MainApp> {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Great Tafseer",
-      home: HomePageGreat(),
+      home: SplashPage(),
     );
   }
 }

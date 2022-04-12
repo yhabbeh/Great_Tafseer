@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
-AlertDialog appBarButton({required String typeAppBar,required TabController tabController}) {
+AlertDialog appBarButton(
+    {required String typeAppBar,
+    required TabController tabController,
+    required BuildContext context}) {
   String? _sora = "num37";
 
-  Map s = {
+  Map AlertBuilder = {
     "playEnd": AlertDialog(
       title: const Text(
         "تنبيه!",
@@ -16,7 +19,11 @@ AlertDialog appBarButton({required String typeAppBar,required TabController tabC
       ),
       actionsAlignment: MainAxisAlignment.spaceEvenly,
       actions: [
-        TextButton(onPressed: () {}, child: const Text("نعم")),
+        TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text("نعم")),
         TextButton(onPressed: () {}, child: const Text("لا")),
       ],
     ),
@@ -46,11 +53,7 @@ AlertDialog appBarButton({required String typeAppBar,required TabController tabC
                 Radio(
                     value: "num37",
                     groupValue: _sora,
-                    onChanged: (value) {
-                      setState(() {
-                        _sora = value! as String?;
-                      });
-                    }),
+                    onChanged: (value) { }),
                 const Text(
                   "ص",
                   style: TextStyle(fontSize: 15),
@@ -63,11 +66,7 @@ AlertDialog appBarButton({required String typeAppBar,required TabController tabC
                 Radio(
                     value: "الصافات",
                     groupValue: _sora,
-                    onChanged: (value) {
-                      setState(() {
-                        _sora = value! as String?;
-                      });
-                    }),
+                    onChanged: (value) {  }),
                 const Text(
                   "الصافات",
                   style: TextStyle(fontSize: 15),
@@ -80,11 +79,7 @@ AlertDialog appBarButton({required String typeAppBar,required TabController tabC
                 Radio(
                     value: "fullPage",
                     groupValue: _sora,
-                    onChanged: (value) {
-                      setState(() {
-                        _sora = value! as String?;
-                      });
-                    }),
+                    onChanged: (value) {   }),
                 const Text(
                   "استماع للصفحة كاملة",
                   style: TextStyle(fontSize: 15),
@@ -97,11 +92,7 @@ AlertDialog appBarButton({required String typeAppBar,required TabController tabC
                 Radio(
                     value: "hizb",
                     groupValue: _sora,
-                    onChanged: (value) {
-                      setState(() {
-                        _sora = value! as String?;
-                      });
-                    }),
+                    onChanged: (value) {    }),
                 const Text(
                   "استماع للحزب",
                   style: TextStyle(fontSize: 15),
@@ -114,11 +105,7 @@ AlertDialog appBarButton({required String typeAppBar,required TabController tabC
                 Radio(
                     value: "joza",
                     groupValue: _sora,
-                    onChanged: (value) {
-                      setState(() {
-                        _sora = value! as String?;
-                      });
-                    }),
+                    onChanged: (value) {  }),
                 const Text(
                   "استماع للجزء",
                   style: TextStyle(fontSize: 15),
@@ -126,10 +113,18 @@ AlertDialog appBarButton({required String typeAppBar,required TabController tabC
               ],
             ),
             const SizedBox(height: 20),
-              const CheckboxListTile(
-                title: Text("تكرار الاستماع",style: TextStyle(color: Colors.black)) ,value: true, onChanged: null),
-              const CheckboxListTile(
-                title: Text("الاستماع من الصفحة الحالية",style: TextStyle(color: Colors.black),), value: false, onChanged: null),
+            const CheckboxListTile(
+                title: Text("تكرار الاستماع",
+                    style: TextStyle(color: Colors.black)),
+                value: true,
+                onChanged: null),
+            const CheckboxListTile(
+                title: Text(
+                  "الاستماع من الصفحة الحالية",
+                  style: TextStyle(color: Colors.black),
+                ),
+                value: false,
+                onChanged: null),
           ],
         ),
       ),
@@ -139,24 +134,38 @@ AlertDialog appBarButton({required String typeAppBar,required TabController tabC
         TextButton(onPressed: () {}, child: const Text("لا")),
       ],
     ),
-    "ayaList":  AlertDialog(
-      content:Container(
-        height: 300,width: 300,
-        child: Column(
-          children: [
-            TabBar(
-              tabs: const [
-                Tab(
-                  child: Text("قوائم الآيات",style: TextStyle(color:Colors.black,fontWeight: FontWeight.bold,fontSize: 15),),),
-                Tab(
-                  child: Text("قوائم البحث",style: TextStyle(color:Colors.black,fontWeight: FontWeight.bold,fontSize: 15),),),
-              ],
-              controller: tabController,
-            ),
-          ],
-        ),
-      )
-    ),
+    "ayaList": AlertDialog(
+        content: Container(
+      height: 300,
+      width: 300,
+      child: Column(
+        children: [
+          TabBar(
+            tabs: const [
+              Tab(
+                child: Text(
+                  "قوائم الآيات",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  "قوائم البحث",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15),
+                ),
+              ),
+            ],
+            controller: tabController,
+          ),
+        ],
+      ),
+    )),
     "settings": AlertDialog(
       title: const Text(
         "تنبيه!",
@@ -175,7 +184,6 @@ AlertDialog appBarButton({required String typeAppBar,required TabController tabC
         style: TextStyle(fontWeight: FontWeight.bold),
         textAlign: TextAlign.center,
       ),
-
       actionsAlignment: MainAxisAlignment.spaceEvenly,
       actions: [
         TextButton(onPressed: () {}, child: const Text("نعم")),
@@ -188,25 +196,20 @@ AlertDialog appBarButton({required String typeAppBar,required TabController tabC
         style: TextStyle(fontWeight: FontWeight.bold),
         textAlign: TextAlign.center,
       ),
-
       actionsAlignment: MainAxisAlignment.spaceEvenly,
       actions: [
         TextButton(onPressed: () {}, child: const Text("نعم")),
         TextButton(onPressed: () {}, child: const Text("لا")),
       ],
     ),
-    "addBookMark": AlertDialog(
-      title: const Text(
+    "addBookMark": const AlertDialog(
+      title: Text(
         "تنبيه!",
         style: TextStyle(fontWeight: FontWeight.bold),
         textAlign: TextAlign.center,
       ),
-
       actionsAlignment: MainAxisAlignment.spaceEvenly,
-      actions: [
-        TextButton(onPressed: () {}, child: const Text("نعم")),
-        TextButton(onPressed: () {}, child: const Text("لا")),
-      ],
+
     ),
     "search": AlertDialog(
       title: const Text(
@@ -214,7 +217,6 @@ AlertDialog appBarButton({required String typeAppBar,required TabController tabC
         style: TextStyle(fontWeight: FontWeight.bold),
         textAlign: TextAlign.center,
       ),
-
       actionsAlignment: MainAxisAlignment.spaceEvenly,
       actions: [
         TextButton(onPressed: () {}, child: const Text("نعم")),
@@ -223,9 +225,6 @@ AlertDialog appBarButton({required String typeAppBar,required TabController tabC
     )
   };
 
-  return s[typeAppBar];
+  return AlertBuilder[typeAppBar];
 }
 
-class _ssora {}
-
-void setState(Null Function() param0) {}

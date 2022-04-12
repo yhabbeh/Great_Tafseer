@@ -1,24 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:mian/const/images.dart';
 
-Widget buildButtonAppBar(
-    {required BuildContext context,
-    required double width,
-    required String imagPath,
-    required AlertDialog alertDialog}) {
+
+Widget buildButtonAppBar({
+  required BuildContext context,
+  required double width,
+  required double height,
+  required String imagPath,
+  required AlertDialog alertDialog,
+  required typeButton,
+}) {
+
+
   return InkWell(
     onTap: () {
+      (typeButton != "addBookMark") ?
       showDialog(
           context: context,
           builder: (BuildContext context) {
-            return Container(width:50,height: 400,child: alertDialog);
-          }
-          );
+            return SizedBox(
+                width: 50,
+                height: 400,
+                child: alertDialog
+            );
+          })
+            ://still need checking exception
+             const Positioned(
+                top: 50,
+                left: 30,
+                child: Image(image: AssetImage(bookMark),width: 100,height: 50,));
+
+
     },
     child: Container(
-      width:50,
-      height: 30,
-      decoration:
-          BoxDecoration(image: DecorationImage(image: AssetImage(imagPath))),
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(imagPath), fit: BoxFit.fitHeight)),
     ),
   );
 }
