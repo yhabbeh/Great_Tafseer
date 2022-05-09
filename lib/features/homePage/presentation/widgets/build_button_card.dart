@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mian/const/images.dart';
 
+import '../../../../core/const/images.dart';
 
-Widget buildButtonAppBar({
+Widget buildButton({
   required BuildContext context,
   required double width,
   required double height,
@@ -25,7 +25,7 @@ Widget buildButtonAppBar({
             );
           })
             ://still need checking exception
-             const Positioned(
+              const Positioned(
                 top: 50,
                 left: 30,
                 child: Image(image: AssetImage(bookMark),width: 100,height: 50,));
