@@ -1,5 +1,3 @@
-
-
 import 'images.dart';
 
 List<String> imageList = [
@@ -24,24 +22,24 @@ List<String> typeButton = [
 ];
 
 Map pageIndex = {
-  321: p321,
-  325: p325,
-  367: p367,
-  452: p452,
+  321: PAGE321,
+  325: PAGE325,
+  367: PAGE367,
+  452: PAGE452,
 };
 
 Map soraName = {
-  Sora020: 20,
-  Sora021: 21,
-  Sora026: 26,
-  Sora037: 37,
+  SORA20: 20,
+  SORA21: 21,
+  SORA26: 26,
+  SORA37: 37,
 };
 
 Map jozaName = {
-  16: Joza016,
-  17: Joza017,
-  19: Joza019,
-  23: Joza023,
+  16: JOZA016,
+  17: JOZA017,
+  19: JOZA019,
+  23: JOZA023,
 };
 
 List<int> indexx = [
@@ -51,3 +49,9 @@ List<int> indexx = [
   452,
 ];
 
+List informationOfPages = [
+  {"pageIndex": 321, "Page": PAGE321, "sora": SORA20, "joza": JOZA016},
+  {"pageIndex": 325, "Page": PAGE325, "sora": SORA21, "joza": JOZA017},
+  {"pageIndex": 367, "Page": PAGE367, "sora": SORA26, "joza": JOZA019},
+  {"pageIndex": 452, "Page": PAGE452, "sora": SORA37, "joza": JOZA023}
+];

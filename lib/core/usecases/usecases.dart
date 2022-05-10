@@ -8,3 +8,5 @@ abstract class UseCase<Type, Params> {
 }
 
 mixin NoParams implements Equatable {}
+
+

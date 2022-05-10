@@ -4,5 +4,5 @@ import 'package:mian/features/homePage/domain/entites/great_tafseer.dart';
 import '../../../../core/error/failures.dart';
 
 abstract class HomePageRepository{
-  Future<Either<Failure,GreatTafseer>> pageViewSwipe(int index );
+  Future<Either<Failure,GreatTafseer>> getPageViewSwipe(int index );
 }

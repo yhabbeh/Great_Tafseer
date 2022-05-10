@@ -12,20 +12,20 @@ class GreatTafseerModel extends GreatTafseer {
       numberOfPage: numberOfPage,
       imageOfSora: imageOfSora);
 
-  factory GreatTafseerModel.fromJson(Map<String, dynamic> json) {
+  factory GreatTafseerModel.fromJson(Map<dynamic, dynamic> json) {
     return GreatTafseerModel(
-        nameOfSora: json["nameOfSora"],
-        partOfSora: json["partOfSora"],
-        numberOfPage: json["numberOfPage"],
-        imageOfSora: json["imageOfSora"]);
+        nameOfSora: json["sora"],
+        partOfSora: json["joza"],
+        numberOfPage: json["pageIndex"],
+        imageOfSora: json["page"]);
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'nameOfSora': nameOfSora,
-      'partOfSora': partOfSora,
-      'numberOfPage': numberOfPage,
-      'imageOfSora': imageOfSora
+      'sora': nameOfSora,
+      'joza': partOfSora,
+      'page': imageOfSora,
+      'pageIndex': numberOfPage,
     };
   }
 }

@@ -204,7 +204,7 @@ class _HomePageGreatState extends State<HomePageGreat>
                     child: Image(
                       height: height / 15,
                       width: width / 6,
-                      image: const AssetImage(Sora037),
+                      image: const AssetImage(SORA37),
                     )),
                 Positioned(
                     right: width / 5.5,
