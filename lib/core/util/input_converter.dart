@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import '../error/failures.dart';
 
 class InputConverter {
-  Either<Failure, int> StringToUnsignedInteger(String str) {
+  Either<Failure, int> stringToUnsignedInteger(String str) {
     final integer = int.parse(str);
     try {
       if (integer < 0) throw left(InvalidInputFailure());

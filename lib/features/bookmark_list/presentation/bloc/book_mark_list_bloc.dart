@@ -7,9 +7,14 @@ part 'book_mark_list_event.dart';
 part 'book_mark_list_state.dart';
 
 class BookMarkListBloc extends Bloc<BookMarkListEvent, BookMarkListState> {
-  BookMarkListBloc() : super(BookMarkListInitial()) {
-    on<BookMarkListEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+
+  @override
+  // TODO: implement initialState
+  BookMarkListState get initialState => throw UnimplementedError();
+
+  @override
+  Stream<BookMarkListState> mapEventToState(BookMarkListEvent event) {
+    // TODO: implement mapEventToState
+    throw UnimplementedError();
   }
 }

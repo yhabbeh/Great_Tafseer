@@ -28,13 +28,11 @@ class GreatTafseerBloc extends Bloc<GreatTafseerEvent, GreatTafseerState> {
   GreatTafseerState get initialState => ViewPageInitial();
 
   @override
-  Stream<GreatTafseerState> mapEventToState(GreatTafseerEvent event,) async* {
+  Stream<GreatTafseerState> mapEventToState(GreatTafseerEvent event) async* {
     if (event is GetSwipePageView) {
-      final inputEither = inputConverter.StringToUnsignedInteger(
+      final inputEither = inputConverter.stringToUnsignedInteger(
           event.indexPage.toString());
       yield* inputEither.fold(
-
-
             (failure) async* {
           yield const ViewPageStateError(
               message: INVALID_INPUT_FAILURE_MESSAGE);
