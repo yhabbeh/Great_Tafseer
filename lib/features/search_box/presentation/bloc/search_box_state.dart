@@ -9,7 +9,7 @@ abstract class SearchBoxState extends Equatable {
 class SearchBoxInitial extends SearchBoxState {}
 class SearchBoxLoading extends SearchBoxState {}
 class SearchBoxLoaded extends SearchBoxState {
-  final SearchBox searchBox ;
+  final List<SearchBox>  searchBox ;
   const SearchBoxLoaded({required this.searchBox});
 }
 class SearchBoxError extends SearchBoxState {

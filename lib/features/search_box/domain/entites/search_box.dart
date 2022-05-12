@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-
 class SearchBox extends Equatable {
   final int indexPage;
   final String nameOfSora;

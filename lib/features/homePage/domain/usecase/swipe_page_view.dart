@@ -9,14 +9,13 @@ import '../repositories/great_tafseer_repository.dart';
 
 class SwipePageView implements UseCase<GreatTafseer,Params>{
   final HomePageRepository repository;
-  SwipePageView(this.repository);
+  SwipePageView({required this.repository});
 
   @override
   Future<Either<Failure, GreatTafseer>>? call(params) async{
     return await repository.getPageViewSwipe(params.index);
 
   }
- 
 }
 
 class Params extends Equatable {
