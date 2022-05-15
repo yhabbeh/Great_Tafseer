@@ -1,4 +1,5 @@
-import 'package:mian/features/search_box/data/models/search_box_model.dart';
+
+import '../models/search_box_model.dart';
 abstract class SearchBoxLocalDataSource {
   Future<List<SearchBoxModel>> getDataFromIndex(String text);
 }

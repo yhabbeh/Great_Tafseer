@@ -1,11 +1,10 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:mian/core/util/input_converter.dart';
-import 'package:mian/features/homePage/domain/entites/great_tafseer.dart';
-import 'package:mian/features/homePage/domain/usecase/swipe_page_view.dart';
-
 import '../../../../core/error/failures.dart';
+import '../../../../core/util/input_converter.dart';
+import '../../domain/entites/great_tafseer.dart';
+import '../../domain/usecase/swipe_page_view.dart';
 
 part 'great_tafseer_event.dart';
 
@@ -22,7 +21,7 @@ class GreatTafseerBloc extends Bloc<GreatTafseerEvent, GreatTafseerState> {
   final SwipePageView swipePageView;
   final InputConverter inputConverter;
 
-  GreatTafseerBloc({required this.inputConverter, required this.swipePageView});
+  GreatTafseerBloc({required this.inputConverter, required this.swipePageView}) : super(ViewPageInitial());
 
   @override
   GreatTafseerState get initialState => ViewPageInitial();

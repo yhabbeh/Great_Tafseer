@@ -1,6 +1,7 @@
 
 
-import 'package:mian/features/homePage/data/models/home_page_model.dart';
+
+import '../models/home_page_model.dart';
 
 abstract class GreatTafseerRemoteDataSource {
   Future<GreatTafseerModel> getPageViewSwipe();

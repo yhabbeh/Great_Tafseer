@@ -11,7 +11,7 @@ part 'search_box_state.dart';
 class SearchBoxBloc extends Bloc<SearchBoxEvent, SearchBoxState> {
   final SearchBar searchBar;
 
-  SearchBoxBloc({required this.searchBar});
+  SearchBoxBloc({required this.searchBar}) : super(SearchBoxInitial());
 
   @override
   SearchBoxState get initialState => SearchBoxInitial();

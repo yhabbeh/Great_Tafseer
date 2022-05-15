@@ -1,4 +1,5 @@
-import 'package:mian/features/bookmark_list/data/models/book_mark_model.dart';
+
+import '../models/book_mark_model.dart';
 
 abstract class BookMarkListLocalDataSource {
   Future<BookMarkListModel> getDataFromIndex(int indexPage);

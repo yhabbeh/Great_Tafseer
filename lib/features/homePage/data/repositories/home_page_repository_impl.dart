@@ -1,10 +1,9 @@
 import 'package:dartz/dartz.dart';
 
-import 'package:mian/core/error/failures.dart';
-
-import 'package:mian/features/homePage/domain/entites/great_tafseer.dart';
 
 import '../../../../core/error/exceptions.dart';
+import '../../../../core/error/failures.dart';
+import '../../domain/entites/great_tafseer.dart';
 import '../../domain/repositories/great_tafseer_repository.dart';
 import '../data_source/great_tafseer_local_data_source.dart';
 import '../data_source/great_tafseer_remote_data_source.dart';

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:mian/core/error/failures.dart';
-import 'package:mian/features/search_box/domain/entites/search_box.dart';
 import '../../../../core/error/exceptions.dart';
+import '../../../../core/error/failures.dart';
+import '../../domain/entites/search_box.dart';
 import '../../domain/repositories/search_box_repository.dart';
 import '../data_source/search_box_local_data_source.dart';
 

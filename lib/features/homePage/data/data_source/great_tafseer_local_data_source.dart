@@ -1,9 +1,8 @@
 
 
-import 'package:mian/features/homePage/data/models/home_page_model.dart';
-
 import '../../../../core/const/lists.dart';
 import '../../../../core/error/exceptions.dart';
+import '../models/home_page_model.dart';
 
 abstract class GreatTafseerLocalDataSource {
   Future<GreatTafseerModel> getDataFromIndex(int index);

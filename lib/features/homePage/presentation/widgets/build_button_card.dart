@@ -10,8 +10,6 @@ Widget buildButton({
   required AlertDialog alertDialog,
   required typeButton,
 }) {
-
-
   return InkWell(
     onTap: () {
       (typeButton != "addBookMark") ?
@@ -29,6 +27,7 @@ Widget buildButton({
                 top: 50,
                 left: 30,
                 child: Image(image: AssetImage(bookMark),width: 100,height: 50,));
+
 
 
     },

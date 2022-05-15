@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:mian/core/usecases/usecases.dart';
 import '../../../../core/error/failures.dart';
+import '../../../../core/usecases/usecases.dart';
 import '../../../../core/util/input_converter.dart';
 import '../../../homePage/presentation/bloc/great_tafseer_bloc.dart';
 import '../../domain/entites/book_mark_list.dart';
@@ -25,7 +25,7 @@ class BookMarkListBloc extends Bloc<BookMarkListEvent, BookMarkListState> {
     required this.removeRecordFromBookMarkList,
     required this.removeAllRecordsFromBookMarkList,
     required this.inputConverter,
-  });
+  }) : super(GetPageOfRecordInitial());
   @override
   BookMarkListState get initialState => GetPageOfRecordInitial();
 

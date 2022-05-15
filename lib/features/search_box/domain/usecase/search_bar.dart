@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:mian/core/error/failures.dart';
-import 'package:mian/core/usecases/usecases.dart';
+import '../../../../core/error/failures.dart';
+import '../../../../core/usecases/usecases.dart';
 import '../entites/search_box.dart';
 import '../repositories/search_box_repository.dart';
 

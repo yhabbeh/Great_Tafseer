@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/const/images.dart';
 import '../../../../core/const/lists.dart';
 
@@ -75,86 +76,121 @@ class _HomePageGreatState extends State<HomePageGreat>
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           InkWell(
-                            child: Container(width: 30,height: 40,
+                            child: Container(
+                              width: 30,
+                              height: 40,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage(imageList[0]), fit: BoxFit.fitHeight)),
+                                      image: AssetImage(imageList[0]),
+                                      fit: BoxFit.fitHeight)),
                             ),
-                            onTap: (){},
+                            onTap: () {},
                           ),
                           InkWell(
-                            child: Container(width: 30,height: 40,
+                            child: Container(
+                              width: 30,
+                              height: 40,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage(imageList[1]), fit: BoxFit.fitHeight)),
+                                      image: AssetImage(imageList[1]),
+                                      fit: BoxFit.fitHeight)),
                             ),
-                            onTap: (){},
+                            onTap: () {},
                           ),
                           InkWell(
-                            child: Container(width: 30,height: 40,
+                            child: Container(
+                              width: 30,
+                              height: 40,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage(imageList[2]), fit: BoxFit.fitHeight)),
+                                      image: AssetImage(imageList[2]),
+                                      fit: BoxFit.fitHeight)),
                             ),
-                            onTap: (){},
+                            onTap: () {},
                           ),
                           InkWell(
-                            child: Container(width: 30,height: 40,
+                            child: Container(
+                              width: 30,
+                              height: 40,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage(imageList[3]), fit: BoxFit.fitHeight)),
+                                      image: AssetImage(imageList[3]),
+                                      fit: BoxFit.fitHeight)),
                             ),
-                            onTap: (){},
+                            onTap: () {},
                           ),
                           InkWell(
-                            child: Container(width: 30,height: 40,
+                            child: Container(
+                              width: 30,
+                              height: 40,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage(imageList[4]), fit: BoxFit.fitHeight)),
+                                      image: AssetImage(imageList[4]),
+                                      fit: BoxFit.fitHeight)),
                             ),
-                            onTap: (){},
+                            onTap: () {},
                           ),
                           InkWell(
-                            child: Container(width: 30,height: 40,
+                            child: Container(
+                              width: 30,
+                              height: 40,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage(imageList[5]), fit: BoxFit.fitHeight)),
+                                      image: AssetImage(imageList[5]),
+                                      fit: BoxFit.fitHeight)),
                             ),
-                            onTap: (){},
+                            onTap: () {},
                           ),
                           InkWell(
-                            child: Container(width: 30,height: 40,
+                            child: Container(
+                              width: 30,
+                              height: 40,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage(imageList[6]), fit: BoxFit.fitHeight)),
+                                      image: AssetImage(imageList[6]),
+                                      fit: BoxFit.fitHeight)),
                             ),
-                            onTap: (){},
+                            onTap: () {},
                           ),
                           InkWell(
-                            child: Container( width: 30,height: 40,
+                            child: Container(
+                              width: 30,
+                              height: 40,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage(imageList[7]), fit: BoxFit.fitHeight)),
+                                      image: AssetImage(imageList[7]),
+                                      fit: BoxFit.fitHeight)),
                             ),
-                            onTap: (){},
-                          ),
-
-
-
-
-
-
-                          // for (int index = 0; index < 8; index++)
-                          //   buildButton(
-                          //       context: context,
-                          //       width: width / 12,
-                          //       height: height,
-                          //       imagPath: imageList[index],
-                          //       typeButton: typeButton[index],
-                          //       alertDialog: appBarButton(
-                          //           context: context,
-                          //           typeAppBar: typeButton[index],
-                          //           tabController: tabController)),
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return SizedBox(
+                                    width: 50,
+                                    height: 400,
+                                    child: AlertDialog(
+                                      title: const Text(
+                                        "تنبيه!",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      actionsAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      actions: [
+                                        TextButton(
+                                            onPressed: () {},
+                                            child: const Text("نعم")),
+                                        TextButton(
+                                            onPressed: () {},
+                                            child: const Text("لا")),
+                                      ],
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                          )
                         ],
                       ),
                     )
@@ -183,7 +219,11 @@ class _HomePageGreatState extends State<HomePageGreat>
                 ), //border
                 Padding(
                   padding: EdgeInsets.fromLTRB(
-                      width / 12, height / 15, width / 12, height / 15),
+                    width / 12,
+                    height / 15,
+                    width / 12,
+                    height / 15,
+                  ),
                   child: PageView.builder(
                     controller: controller,
                     scrollDirection: Axis.horizontal,

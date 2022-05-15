@@ -1,4 +1,5 @@
- import 'package:mian/features/homePage/domain/entites/great_tafseer.dart';
+
+import '../../domain/entites/great_tafseer.dart';
 
 class GreatTafseerModel extends GreatTafseer {
   const GreatTafseerModel(

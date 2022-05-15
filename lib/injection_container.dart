@@ -1,10 +1,12 @@
-import 'package:data_connection_checker/data_connection_checker.dart';
+
 import 'package:get_it/get_it.dart';
-import 'package:mian/core/util/input_converter.dart';
-import 'package:mian/features/homePage/data/data_source/great_tafseer_local_data_source.dart';
-import 'package:mian/features/homePage/data/data_source/great_tafseer_remote_data_source.dart';
-import 'package:mian/features/homePage/data/repositories/home_page_repository_impl.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
+
 import 'core/network/network_info.dart';
+import 'core/util/input_converter.dart';
+import 'features/homePage/data/data_source/great_tafseer_local_data_source.dart';
+import 'features/homePage/data/data_source/great_tafseer_remote_data_source.dart';
+import 'features/homePage/data/repositories/home_page_repository_impl.dart';
 import 'features/homePage/domain/repositories/great_tafseer_repository.dart';
 import 'features/homePage/domain/usecase/swipe_page_view.dart';
 import 'features/homePage/presentation/bloc/great_tafseer_bloc.dart';
@@ -41,7 +43,7 @@ Future<void> init() async {
 
 //External
 sl.registerLazySingleton(() => http.Client());
-sl.registerLazySingleton(() => DataConnectionChecker());
+sl.registerLazySingleton(() => InternetConnectionChecker());
 
   /*
   //To be continue

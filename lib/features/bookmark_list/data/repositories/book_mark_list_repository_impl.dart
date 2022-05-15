@@ -1,9 +1,8 @@
 import 'package:dartz/dartz.dart';
 
-import 'package:mian/core/error/failures.dart';
-
-import 'package:mian/features/bookmark_list/domain/entites/book_mark_list.dart';
 import '../../../../core/error/exceptions.dart';
+import '../../../../core/error/failures.dart';
+import '../../domain/entites/book_mark_list.dart';
 import '../../domain/repositories/book_mark_list_repository.dart';
 import '../data_source/book_mark_local_data_source.dart';
 

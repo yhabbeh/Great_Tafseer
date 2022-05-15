@@ -1,4 +1,5 @@
-import 'package:mian/features/search_box/domain/entites/search_box.dart';
+
+import '../../domain/entites/search_box.dart';
 
 class SearchBoxModel extends SearchBox {
   const SearchBoxModel({
