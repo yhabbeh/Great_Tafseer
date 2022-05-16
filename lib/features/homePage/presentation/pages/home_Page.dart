@@ -11,20 +11,24 @@ class HomePageGreat extends StatefulWidget {
 }
 
 class _HomePageGreatState extends State<HomePageGreat>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late PageController pageController;
-  late TabController tabController;
+  late TabController tabController ;
 
   List<String> pageNumbers = ['321', '325', '367', '452'];
 
   String pageNumber = '451';
+  int tabNumberIndx = 0;
+
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     pageController = PageController(initialPage: 0);
-    tabController = TabController(length: 2, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
+
+
   }
 
   int checkPageJoza(int page) {
@@ -44,6 +48,13 @@ class _HomePageGreatState extends State<HomePageGreat>
   changePage(index) {
     setState(() {
       pageNumber = pageNumbers[index];
+    });
+  }
+List tabNumber =[1,2,3,4];
+
+  changeTab(index) {
+    setState(() {
+      tabNumberIndx = tabNumber[index];
     });
   }
 
@@ -177,17 +188,50 @@ class _HomePageGreatState extends State<HomePageGreat>
                                       ),
                                       actionsAlignment:
                                           MainAxisAlignment.spaceEvenly,
+                                      content: SizedBox(
+                                          width: width / 2,
+                                          height: height / 2,
+                                          child: Column(
+                                            children: [
+                                              TextField(
+                                                onTap: () {},
+                                                keyboardType:
+                                                    TextInputType.number,
+                                              ),
+                                              TabBar(
+                                                controller: tabController,
+                                                  onTap: (value){
+
+                                                    changeTab(value);
+
+                                                  },
+
+                                                  tabs:  [
+                                                Tab(
+
+                                                    child: Text(tabNumberIndx.toString(),style:TextStyle(color: Colors.black,fontSize: 12,),)),
+                                                Tab(child: Text("test2",style:TextStyle(color: Colors.black,fontSize: 12,),)),
+                                                Tab(child: Text("test3")),
+                                                Tab(child: Text("test4") ,
+                                                ),
+                                              ])
+                                            ],
+                                          )),
                                       actions: [
                                         TextButton(
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
                                             child: const Text("نعم")),
                                         TextButton(
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
                                             child: const Text("لا")),
                                       ],
                                     ),
                                   );
-                                },
+                                },/////
                               );
                             },
                           )
